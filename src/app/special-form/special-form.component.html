@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Your Name</mat-label>
+      <input matInput formControlName="name" id="name" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Your firstname</mat-label>
+      <input matInput formControlName="firstName" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Your birth year</mat-label>
+      <input
+        matInput
+        type="number"
+        [min]="minYear"
+        [max]="currentYear"
+        formControlName="birthYear"
+      />
+    </mat-form-field>
+  </p>
+  <p>
+    <button mat-stroked-button type="button" color="accent">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!form.valid">
+      Submit
+    </button>
+  </p>
+</form>
